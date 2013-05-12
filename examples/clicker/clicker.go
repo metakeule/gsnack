@@ -2,7 +2,7 @@ package clicker
 
 import (
 	ŧ "fmt"
-	. "github.com/metakeule/snack"
+	. "github.com/metakeule/gsnack"
 )
 
 var js = B(`
