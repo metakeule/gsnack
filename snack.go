@@ -31,9 +31,9 @@ func (ø *Snack) new(id string, class string) (p Plugger) {
 	i := &instance{Snack: ø}
 	i.id = id
 	i.class = class
-	i.html_, _ = f.New(delimiter, ø.Html)
-	i.css_, _ = f.New(delimiter, ø.Css)
-	i.js_, _ = f.New(delimiter, ø.Js)
+	i.html_, _ = f.NewBytes(delimiter, ø.Html)
+	i.css_, _ = f.NewBytes(delimiter, ø.Css)
+	i.js_, _ = f.NewBytes(delimiter, ø.Js)
 	p = i
 	return
 }
@@ -49,15 +49,15 @@ func (ø *Snack) WithClass(class string) (p Plugger) {
 // checks if we got parse errors
 func (ø *Snack) ParseErrors() (errs []error) {
 	errs = []error{}
-	_, err := f.New(delimiter, ø.Html)
+	_, err := f.NewBytes(delimiter, ø.Html)
 	if err != nil {
 		errs = append(errs, err)
 	}
-	_, err = f.New(delimiter, ø.Css)
+	_, err = f.NewBytes(delimiter, ø.Css)
 	if err != nil {
 		errs = append(errs, err)
 	}
-	_, err = f.New(delimiter, ø.Js)
+	_, err = f.NewBytes(delimiter, ø.Js)
 	if err != nil {
 		errs = append(errs, err)
 	}

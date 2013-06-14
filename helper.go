@@ -45,14 +45,14 @@ var testCTemplate = []byte(`<!DOCTYPE html>
 func (ø *testContainer) Html(libs []*JsLib, template string) string {
 	var fr *f.FReplace
 	if template == "" {
-		fr, _ = f.New(delimiter, testCTemplate)
+		fr, _ = f.NewBytes(delimiter, testCTemplate)
 	} else {
-		fr, _ = f.New(delimiter, []byte(template))
+		fr, _ = f.NewBytes(delimiter, []byte(template))
 	}
 	i := fr.Instance()
-	i.Assign(`style`, ø.css)
-	i.Assign(`body`, ø.html)
-	i.Assign(`script`, ø.js)
+	i.AssignBytes(`style`, ø.css)
+	i.AssignBytes(`body`, ø.html)
+	i.AssignBytes(`script`, ø.js)
 	i.AssignString(`title`, `Snack Test`)
 	l := jslibs(libs)
 	i.AssignString(`libs`, l.Include())

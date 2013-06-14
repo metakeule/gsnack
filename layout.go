@@ -15,7 +15,7 @@ type layout struct {
 }
 
 func Layout(template []byte) (ø *layout) {
-	repl, _ := f.New(delimiter, template)
+	repl, _ := f.NewBytes(delimiter, template)
 	ø = &layout{
 		replacer:     repl,
 		replacements: map[string][]byte{},

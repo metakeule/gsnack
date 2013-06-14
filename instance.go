@@ -48,9 +48,9 @@ func (ø *instance) Plug(target Container, vals map[string][]byte) {
 		ø.Initializer(ø, vs)
 	}
 
-	target.AddCss(ø.css_.Replace(vs))
-	target.AddHtml(ø.html_.Replace(vs))
-	target.AddJs(ø.js_.Replace(vs))
+	target.AddCss(ø.css_.ReplaceBytes(vs))
+	target.AddHtml(ø.html_.ReplaceBytes(vs))
+	target.AddJs(ø.js_.ReplaceBytes(vs))
 }
 
 func (ø *instance) Test(vals map[string][]byte, template string) string {
