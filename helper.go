@@ -59,4 +59,4 @@ func (ø *testContainer) Html(libs []*JsLib, template string) string {
 	return i.String()
 }
 
-func B(s string) []byte { return []byte(s) }
+func By(s string) []byte { return []byte(s) }

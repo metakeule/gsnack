@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	. "github.com/metakeule/snack"
-	"github.com/metakeule/snack/examples/clicker"
+	. "github.com/metakeule/gsnack"
+	"github.com/metakeule/gsnack/examples/clicker"
 )
 
 var jquery = Jquery(1, 8, 3)
